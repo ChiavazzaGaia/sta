@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"&gt;
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script&gt;
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script&gt;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script&gt;
+
+
+    <title>Calcolatore kcal</title>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>Calcolatore calorico kcal 2bit</h2>
+        <p>Inseriamo quante proteine carboidrati e grassi nel modulo è riceviamo il totale delle kcal</p>
+     
+          <div class="form-group">
+            <label for="dato1">Carboidrati</label>
+            <input type="text" class="form-control" id="dato1" name="dato1">
+
+            <label for="dato2">Proteine</label>
+            <input type="text" class="form-control" id="dato2" name="dato2">
+
+            <label for="dato3">Grassi</label>
+            <input type="text" class="form-control" id="dato3" name="dato3">
+
+
+
+           
+          </div>
+         
+          <button type="submit" onclick="calcolaCalorie()" class="btn btn-primary">Calcola</button>
+          <div id="output">
+
+
+          </div>
+      </div>
+
+
+
+    <script>
+         function calcolaCalorie() {
+
+            let gcarb=0;
+            let gprot=0;
+            let gfat=0;
+            let kcal=0;
+            gcarb=document.getElementById("dato1").value;
+ 
+            gprot=document.getElementById("dato2").value;
+
+            gfat=document.getElementById("dato3").value;
+
+            totc= (gcarb * 4) + (gprot * 4) + (gfat * 9)
+
+            alert("Le calorie secondo i dati inseriti sono "+totc,"");
+
+         }
+
+    </script>
+</body>
+</html>
