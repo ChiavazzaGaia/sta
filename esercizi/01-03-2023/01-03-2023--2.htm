@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"&gt;
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script&gt;
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script&gt;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script&gt;
+
+</head>
+<body>
+    <div class="container">
+        <h2>Convertitore di valute</h2>
+        <p>Inserire quanti euro vuoi convertire</p>
+     
+          <div class="form-group">
+            <label for="dato1">Euro</label>
+            <input type="text" class="form-control" id="dato1" name="dato1">
+           
+          </div>
+         
+          <button type="submit" onclick="calcolaDollari()" class="btn btn-primary">Calcola in altre valute</button>
+          <div id="output">
+
+          </div>
+      </div>
+
+
+
+    <script>
+         function calcolaDollari() {
+
+            let euro=0;
+            let tot=0;
+            let USD=1.06595;
+            let AUD=1.57554;
+            let BRL=5.5753;
+            let CAD=1.44975;
+            let CHF=0.999;
+            let CNY=7.3239;
+            let DKK=7.44337;
+            let GBP=0.88516;
+            euro=document.getElementById("dato1").value;
+
+            USD= euro * (1 / USD)
+            AUD= euro * (1 / AUD)
+            BRL= euro * (1 / BRL)
+            CAD= euro * (1 / CAD)
+            CHF= euro * (1 / CHF)
+            CNY= euro * (1 / CNY)
+            DKK= euro * (1 / DKK)
+            GBP= euro * (1 / GBP)
+
+            alert("Gli euro inseriti equivalgono a: \n Dollari "+USD+" \n Dollari australiani "+AUD+" \n Dollari braziliani "+BRL+" \n Dollari canadesi "+CAD+" \n Franchi "+CHF+" \n Renminbi "+CNY+" \n Dollari danesi "+DKK+" \n Sterline "+GBP+" \n");
+
+         }
+
+    </script>
+</body>
+</html>
