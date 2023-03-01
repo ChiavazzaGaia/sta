@@ -22,15 +22,35 @@
         <p>Inserire quanti euro vuoi convertire</p>
      
           <div class="form-group">
-            <label for="dato1">Altezze</label>
+            <label for="dato1">Euro</label>
             <input type="text" class="form-control" id="dato1" name="dato1">
-            <input type="text" class="form-control" id="dato2" name="dato2">
            
           </div>
          
-          <button type="submit" onclick="calcoladislivello()" class="btn btn-primary">Calcola il dislivello</button>
+          <button type="submit" onclick="calcolaDollari()" class="btn btn-primary">Calcola in dollari</button>
           <div id="output">
-            
+
+          <button type="submit" onclick="calcolaDollariAustraliani()" class="btn btn-primary">Calcola in dollari australiani</button>
+          <div id="output">
+
+          <button type="submit" onclick="calcolaDollariBraziliani()" class="btn btn-primary">Calcola in dollari braziliani</button>
+          <div id="output">
+
+          <button type="submit" onclick="calcolaDollariCanadesi()" class="btn btn-primary">Calcola in dollari canadesi</button>
+          <div id="output">
+  
+          <button type="submit" onclick="calcolaFranchi()" class="btn btn-primary">Calcola in franchi</button>
+          <div id="output">
+  
+          <button type="submit" onclick="calcolaRenminbi()" class="btn btn-primary">Calcola in renminbi cinesi</button>
+          <div id="output">
+
+          <button type="submit" onclick="calcolaDollariDanesi()" class="btn btn-primary">Calcola in dollari danesi</button>
+          <div id="output">
+    
+          <button type="submit" onclick="calcolaSterline()" class="btn btn-primary">Calcola in sterline</button>
+          <div id="output">
+
 
           </div>
       </div>
@@ -38,20 +58,95 @@
 
 
     <script>
-         function calcoladislivello() {
+         function calcolaDollari() {
 
-            let h1=0;
-            let h2=0;
-            let dis=0;
-            h1=document.getElementById("dato1").value;
-            h2=document.getElementById("dato2").value;
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
 
-            dis= (h1 - h2)
+            tot= euro * (1 / 1.06595)
 
-            alert("Il dislivello è "+dis,"");
+            alert("Gli euro inseriti equivalgono a "+tot,"");
 
          }
+         function calcolaDollariAustraliani() {
 
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 1.57554)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+         function calcolaDollariBraziliani() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 5.5753)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+         function calcolaDollariCanadesi() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 1.44975)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+        
+         function calcolaFranchi() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 0.999)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+         function calcolaRenminbi() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 7.3239)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+         function calcolaDollariDanesi() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 7.44337)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
+         function calcolaSterline() {
+
+            let euro=0;
+            let tot=0;
+            euro=document.getElementById("dato1").value;
+
+            tot= euro * (1 / 0.88516)
+
+            alert("Gli euro inseriti equivalgono a "+tot,"");
+
+         }
     </script>
 </body>
 </html>
