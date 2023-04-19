@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      #box1{
+        position: absolute;
+        left: 500px;
+        top: 80px;
+        width: 300px;
+        height: 451px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color: bisque
+      }
+
+      #box2{
+        position: absolute;
+        right: 500px;
+        top: 80px;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color: bisque
+      }
+      
+      #answer{
+        position: absolute;
+        right: 800px;
+        top: 700px;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color:aquamarine
+      }
+    </style>
+</head>
+<body>
+
+    <div class="form-group" id="box1">
+        
+        <h1>Serie</h1>
+
+        <label for="dato1">V</label>
+        <input type="text" class="form-control" id="dato1" name="dato1">
+        <br><br>
+        <label for="dato2">I</label>
+        <input type="text" class="form-control" id="dato2" name="dato2">
+        <br><br>
+        <label for="dato3">R1</label>
+        <input type="text" class="form-control" id="dato3" name="dato3">
+        <br><br>
+        <label for="dato4">R2</label>
+        <input type="text" class="form-control" id="dato4" name="dato4">
+        <br><br>
+        <label for="dato5">R3</label>
+        <input type="text" class="form-control" id="dato5" name="dato5">
+        <br><br>
+        <label for="dato6">R Totale</label>
+        <input type="text" class="form-control" id="dato6" name="dato6">
+        <br><br>      
+        <button type="submit" onclick="calcolaS()" class="btn btn-primary">Calcola</button>
+
+      </div>
+
+    <div class="form-group" id="box2">    
+      
+        <h1>Parallelo</h1>
+
+      <label for="2dato1">V</label>
+      <input type="text" class="form-control" id="2dato1" name="2dato1">
+      <br><br>
+      <label for="2dato2">I1</label>
+      <input type="text" class="form-control" id="2dato2" name="2dato2">
+      <br><br>
+      <label for="2dato3">I2</label>
+      <input type="text" class="form-control" id="2dato3" name="2dato3">
+      <br><br>
+      <label for="2dato4">I3</label>
+      <input type="text" class="form-control" id="2dato4" name="2dato4">
+      <br><br>
+      <label for="2dato5">I totale</label>
+      <input type="text" class="form-control" id="2dato5" name="2dato5">
+      <br><br>
+      <label for="2dato6">R1</label>
+      <input type="text" class="form-control" id="2dato6" name="2dato6">
+      <br><br>    
+      <label for="2dato7">R2</label>
+      <input type="text" class="form-control" id="2dato7" name="2dato7">
+      <br><br>
+      <label for="2dato8">R3</label>
+      <input type="text" class="form-control" id="2dato8" name="2dato8">
+      <br><br>
+      <label for="2dato9">R Totale</label>
+      <input type="text" class="form-control" id="2dato9" name="2dato9">
+      <br><br>  
+      <button type="submit" onclick="calcolaP()" class="btn btn-primary">Calcola</button>
+
+      </div>
+    
+      <div id="answer">
+      <h3><p id="demo"></p></h3>
+      <h3><p id="demo2"></p></h3>
+      </div>
+
+    <script>
+
+     function calcolaS()  {
+
+        let V=0;
+        let I=0;
+        let R1=0;
+        let R2=0;
+        let R3=0;
+        let RTot=0;
+       
+        V=document.getElementById("dato1").value;
+        I=document.getElementById("dato2").value;
+        R1=document.getElementById("dato3").value;
+        R2=document.getElementById("dato4").value;
+        R3=document.getElementById("dato5").value;
+        RTot=document.getElementById("dato6").value;
+
+        V= ( RTot * I )
+        I= ( V / RTot )
+        RTot= ( V / I)
+        RTot= ( R1 + R2 + R3)
+
+        document.getElementById("demo").innerHTML =         
+        "V è uguale a "+V+", I è uguale a "+I+", R1 è uguale a "+R1+", R2 è uguale a "+R2+", R3 è uguale a "+R3+", RTot è uguale a "+RTot+"";
+
+     }
+
+     
+     function calcolaP()  {
+
+        let V=0;
+        let I1=0;
+        let I2=0;
+        let I3=0;
+        let ITot=0;
+        let R1=0;
+        let R2=0;
+        let R3=0;
+        let RTot=0;
+       
+        V=document.getElementById("dato1").value;
+        I1=document.getElementById("dato2").value;
+        I2=document.getElementById("dato3").value;
+        I3=document.getElementById("dato4").value;
+        ITot=document.getElementById("dato5").value;
+        R1=document.getElementById("dato6").value;
+        R2=document.getElementById("dato4").value;
+        R3=document.getElementById("dato5").value;
+        RTot=document.getElementById("dato6").value;
+
+        V= ( RTot * ITot )
+        ITot= ( V / RTot )
+        ITot= ( I1 + I2 + I3 )
+        RTot= ( V / ITot )
+        RTot= ( R1 + R2 + R3 )
+
+        document.getElementById("demo2").innerHTML =         
+        "V è uguale a "+V+", I1 è uguale a "+I1+", I2 è uguale a "+I2+", I3 è uguale a "+I3+", I totale è uguale a "+ITot+", R1 è uguale a "+R1+", R2 è uguale a "+R2+", R3 è uguale a "+R3+", RTot è uguale a "+RTot+"";
+     }
+
+    </script>
+
+</body>
+</html>
