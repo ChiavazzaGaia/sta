@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+      #box1{
+        position: absolute;
+        left: 250px;
+        top: 80px;
+        width: 300px;
+        height: 220px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color: bisque
+      }
+
+      #box2{
+        position: absolute;
+        left: 775px;
+        top: 80px;
+        width: 300px;
+        height: 220px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color: bisque
+      }
+      
+      #box3{
+        position: absolute;
+        left: 1300px;
+        top: 80px;
+        width: 300px;
+        height: 220px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color: bisque
+      }
+      
+      #answer{
+        position: absolute;
+        left: 775px;
+        top: 700px;
+        width: 300px;
+        padding: 10px;
+        text-align: center;
+        border: 7px black solid;
+        background-color:aquamarine
+      }
+    </style>
+</head>
+<body>
+
+    <div class="form-group" id="box1">
+        
+        <h1>Differenza</h1>
+
+        <label for="dato1">Intensità</label>
+        <input type="text" class="form-control" id="dato1" name="dato1">
+        <br><br>
+        <label for="dato2">Resistenza</label>
+        <input type="text" class="form-control" id="dato2" name="dato2">
+        <br><br>
+        <button type="submit" onclick="calcoladifferenza()" class="btn btn-primary">Calcola</button>
+
+      </div>
+
+    <div class="form-group" id="box2">    
+      
+        <h1>Intensità</h1>
+
+      <label for="2dato1">Variazione</label>
+      <input type="text" class="form-control" id="2dato1" name="2dato1">
+      <br><br>
+      <label for="2dato2">Resistenza</label>
+      <input type="text" class="form-control" id="2dato2" name="2dato2">
+      <br><br>
+      <button type="submit" onclick="calcolaintesità()" class="btn btn-primary">Calcola</button>
+
+      </div>
+
+    <div class="form-group" id="box3">    
+      
+        <h1>Resistenza</h1>
+
+      <label for="3dato1">Variazione</label>
+      <input type="text" class="form-control" id="3dato1" name="3dato1">
+      <br><br>
+      <label for="3dato2">Intensità</label>
+      <input type="text" class="form-control" id="3dato2" name="3dato2">
+      <br><br>
+      <button type="submit" onclick="calcolaresistenza()" class="btn btn-primary">Calcola</button>
+
+      </div>
+    
+      <div id="answer">
+      <h3><p id="demo"></p></h3>
+      <h3><p id="demo2"></p></h3>
+      </div>
+
+    <script>
+
+     function calcoladifferenza()  {
+
+        let I=0;
+        let R=0;
+        let V=0;
+       
+        I=parseFloat(document.getElementById("dato1").value);
+        R=parseFloat(document.getElementById("dato2").value);
+
+        V= ( R * I )
+ 
+        document.getElementById("demo").innerHTML =         
+        "La variazione è uguale a "+V+"";
+
+
+     }
+
+     
+     function calcolaintesità()  {
+
+        let I=0;
+        let R=0;
+        let V=0;
+       
+        V=parseFloat(document.getElementById("2dato1").value);
+        R=parseFloat(document.getElementById("2dato2").value);
+
+        I= ( V / R )
+
+        document.getElementById("demo").innerHTML =         
+        "L'intensità è uguale a "+I+"";
+     }
+
+     function calcolaresistenza()  {
+
+        let I=0;
+        let R=0;
+        let V=0;
+       
+        V=parseFloat(document.getElementById("3dato1").value);
+        I=parseFloat(document.getElementById("3dato2").value);
+
+        R= ( V * I )
+
+        document.getElementById("demo").innerHTML =         
+        "La resistenza è uguale a "+R+"";
+     }
+
+    </script>
+
+</body>
+</html>
